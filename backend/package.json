@@ -1,0 +1,35 @@
+{
+  "name": "restaurant-backend",
+  "version": "1.0.0",
+  "description": "Restaurant backend API",
+  "main": "dist/api.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/api.js",
+    "restart": "npm run build && npm run start",
+    "dev": "nodemon --exec ts-node src/api.ts",
+    "dev:watch": "nodemon --watch . --ext ts,js --exec ts-node src/api.ts",
+    "clean": "rimraf dist",
+    "rebuild": "npm run clean && npm run build",
+    "type-check": "tsc --noEmit",
+    "lint": "eslint . --ext .ts",
+    "test": "jest",
+    "test:watch": "jest --watch"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.56.1",
+    "axios": "^1.11.0",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.1",
+    "express": "^5.1.0",
+    "node-ts": "^8.0.7",
+    "nodemon": "^3.1.10",
+    "postgres": "^3.4.7",
+    "typescript": "^5.9.2"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.3",
+    "@types/node": "^24.3.0",
+    "ts-node": "^10.9.2"
+  }
+}
