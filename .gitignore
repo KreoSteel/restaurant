@@ -4,3 +4,4 @@ backend/tsconfig.json
 backend/tsconfig.buildinfo
 backend/tsconfig.tsbuildinfo
 backend/.env
+frontend/.env
