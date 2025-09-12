@@ -18,24 +18,24 @@ export default function Login() {
 
   if (!supabaseClient) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-gray-900">
-        <div className="text-white">Loading...</div>
+      <div className="min-h-screen flex items-center justify-center bg-gradient-dark">
+        <div className="text-neutral-900 dark:text-neutral-100">Loading...</div>
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-900 py-12 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen flex items-center justify-center bg-gradient-dark py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-md w-full space-y-8">
         <div>
-          <h2 className="mt-6 text-center text-3xl font-extrabold text-white">
+          <h2 className="mt-6 text-center text-3xl font-extrabold text-neutral-900 dark:text-neutral-100">
             Sign in to your account
           </h2>
-          <p className="mt-2 text-center text-sm text-gray-400">
+          <p className="mt-2 text-center text-sm text-neutral-300 dark:text-neutral-400">
             Or{' '}
             <a
               href="/register"
-              className="font-medium text-indigo-400 hover:text-indigo-300"
+              className="font-medium text-primary-400 hover:text-primary-300 transition-colors duration-200 dark:text-primary-500 dark:hover:text-primary-400"
             >
               create a new account
             </a>
@@ -49,8 +49,8 @@ export default function Login() {
               variables: {
                 default: {
                   colors: {
-                    brand: '#6366f1',
-                    brandAccent: '#4f46e5',
+                    brand: 'var(--color-primary-600)',
+                    brandAccent: 'var(--color-primary-700)',
                   }
                 }
               }

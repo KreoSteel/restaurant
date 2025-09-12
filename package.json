@@ -1,5 +1,8 @@
 {
   "devDependencies": {
     "@types/cors": "^2.8.19"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.57.4"
   }
 }

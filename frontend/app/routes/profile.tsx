@@ -178,10 +178,10 @@ export default function Profile() {
 
   if (loading || roles.length === 0 || restaurants.length === 0) {
     return (
-      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+      <div className="min-h-screen bg-gradient-dark flex items-center justify-center">
         <div className="text-center">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto"></div>
-          <p className="mt-4 text-black">Loading your profile...</p>
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary-500 mx-auto"></div>
+          <p className="mt-4 text-neutral-900 dark:text-neutral-100">Loading your profile...</p>
         </div>
       </div>
     );
@@ -189,13 +189,13 @@ export default function Profile() {
 
   if (!user) {
     return (
-      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+      <div className="min-h-screen bg-gradient-dark flex items-center justify-center">
         <div className="text-center">
-          <h1 className="text-2xl font-bold text-gray-900 mb-4">Please log in</h1>
-          <p className="text-gray-600 mb-4">You need to be logged in to view your profile.</p>
+          <h1 className="text-2xl font-bold text-neutral-900 dark:text-neutral-100 mb-4">Please log in</h1>
+          <p className="text-neutral-300 mb-4">You need to be logged in to view your profile.</p>
           <a
             href="/login"
-            className="bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-md"
+            className="bg-gradient-primary text-neutral-900 dark:text-neutral-100 px-6 py-3 rounded-lg font-semibold transition-all duration-200 hover:shadow-lg hover:scale-105"
           >
             Go to Login
           </a>
@@ -207,18 +207,18 @@ export default function Profile() {
   const hasCompleteProfile = employee && employee.full_name;
 
   return (
-    <div className="min-h-screen bg-gray-50 py-8">
+    <div className="min-h-screen bg-gradient-dark py-8">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="mb-8">
           <div className="flex justify-between items-center">
             <div>
-              <h1 className="text-3xl font-bold text-gray-900">My Profile</h1>
-              <p className="mt-2 text-gray-600">Manage your employee information</p>
+              <h1 className="text-3xl font-bold text-neutral-900 dark:text-neutral-100">My Profile</h1>
+              <p className="mt-2 text-neutral-700 dark:text-neutral-300">Manage your employee information</p>
             </div>
             <button
               onClick={handleLogout}
-              className="bg-red-600 hover:bg-red-700 text-white font-medium py-2 px-4 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500"
+              className="bg-accent-600 hover:bg-accent-700 text-neutral-900 dark:text-neutral-100 font-medium py-2 px-4 rounded-lg shadow-lg focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-accent-500 transition-all duration-200"
             >
               Logout
             </button>
@@ -227,30 +227,30 @@ export default function Profile() {
 
         {/* Error Message */}
         {error && (
-          <div className="mb-6 bg-red-50 border border-red-200 rounded-md p-4">
+          <div className="mb-6 bg-accent-50 border border-accent-200 rounded-lg p-4 dark:bg-accent-900/20 dark:border-accent-700/30">
             <div className="flex">
               <div className="flex-shrink-0">
-                <svg className="h-5 w-5 text-red-400" viewBox="0 0 20 20" fill="currentColor">
+                <svg className="h-5 w-5 text-accent-400" viewBox="0 0 20 20" fill="currentColor">
                   <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clipRule="evenodd" />
                 </svg>
               </div>
               <div className="ml-3">
-                <h3 className="text-sm font-medium text-red-800">Error</h3>
-                <div className="mt-2 text-sm text-red-700">{error}</div>
+                <h3 className="text-sm font-medium text-accent-800 dark:text-accent-200">Error</h3>
+                <div className="mt-2 text-sm text-accent-700 dark:text-accent-300">{error}</div>
               </div>
             </div>
           </div>
         )}
 
         {/* Main Content */}
-        <div className="bg-white shadow rounded-lg overflow-hidden">
-          <div className="px-6 py-4 border-b border-gray-200">
+        <div className="bg-white/95 backdrop-blur-md rounded-2xl shadow-xl border border-neutral-200 overflow-hidden dark:bg-neutral-800/95 dark:border-neutral-700">
+          <div className="px-6 py-4 border-b border-neutral-200">
             <div className="flex justify-between items-center">
-              <h2 className="text-xl font-semibold text-gray-900">Employee Profile</h2>
+              <h2 className="text-xl font-semibold text-black">Employee Profile</h2>
               {hasCompleteProfile && (
                 <button
                   onClick={() => setIsEditing(true)}
-                  className="bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+                  className="bg-gradient-primary text-neutral-900 dark:text-neutral-100 px-4 py-2 rounded-custom font-semibold transition-all duration-200 hover:shadow-custom hover:scale-105"
                 >
                   Edit Profile
                 </button>
@@ -378,7 +378,7 @@ export default function Profile() {
                   <button
                     type="submit"
                     disabled={saving}
-                    className="px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 disabled:opacity-50"
+                    className="px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-neutral-900 dark:text-neutral-100 bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 disabled:opacity-50"
                   >
                     {saving ? 'Saving...' : 'Save Changes'}
                   </button>
@@ -455,7 +455,7 @@ export default function Profile() {
                 <p className="text-gray-600 mb-4">Set up your employee profile to get started.</p>
                 <button
                   onClick={() => setIsEditing(true)}
-                  className="bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+                  className="bg-blue-600 hover:bg-blue-700 text-neutral-900 dark:text-neutral-100 font-medium py-2 px-4 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
                 >
                   Set Up Profile
                 </button>
